@@ -94,8 +94,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .mondai {
-  position: fixed;
   width: 100vh;
-  top: 50px;
+  margin-top: 50px;
+  overflow: auto;
 }
 </style>
