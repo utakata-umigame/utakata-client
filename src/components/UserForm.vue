@@ -1,8 +1,8 @@
 <template>
     <form @submit.prevent="confirm">
         <input v-model="user.name" placeholder="ハンドルネーム">
-        <p>削除用パスは暗号化されませんので、知られても大丈夫な文字列をご使用ください。</p>
         <input v-model="user.removePass" placeholder="削除用パス">
+        <p>削除用パスは暗号化されませんので、知られても大丈夫な文字列をご使用ください。</p>
         <input type="submit" value="設定">
     </form>
 </template>
