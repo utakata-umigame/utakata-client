@@ -42,6 +42,7 @@ export default {
     background: #fafafa;
     position: fixed;
     width: 300px;
+    box-sizing: border-box;
     top: 50px;
     right: 0;
     height: 100vh;
