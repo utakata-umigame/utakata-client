@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="mondai">
-            <p>{{mondai.content}}</p>
+            <p class="multiline">{{mondai.content}}</p>
         </div>
         <mondai-form @submit="sendMondai"/>
         <div v-for="item in questions" :key="item.id">
@@ -15,7 +15,7 @@
         </div>
         <question-form @submit="sendQuestion"/>
         <div>
-          <p>{{mondai.trueAns}}</p>
+          <p class="multiline">{{mondai.trueAns}}</p>
         </div>
         <true-ans-form @submit="sendTrueAns" />
     </div>
