@@ -50,7 +50,13 @@ export default {
     this.$store.dispatch("socket/identify", { name: this.player.name });
   },
   mounted() {},
+  destroyed() {
+    this.$store.commit("socket/disconnect");
+  },
   methods: {
+    leave() {
+      this.$store.commit("socket/disconnect");
+    },
     join() {
       this.$store.dispatch("socket/refresh");
     },

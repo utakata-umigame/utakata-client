@@ -45,6 +45,9 @@ const socket = {
         state.mondai.trueAns = ans;
       });
     },
+    disconnect(state) {
+      state.socket.close();
+    },
     emit(state, obj) {
       if (!socket) return;
       state.socket.emit(obj.name, obj.payload);
