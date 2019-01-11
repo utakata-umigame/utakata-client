@@ -25,12 +25,14 @@ body {
       padding: 10px;
       border: 1px solid #eeeeee;
       font-size: 1rem;
+      box-sizing: border-box;
     }
     textarea {
       padding: 10px;
       border: 1px solid #eeeeee;
-      font-size: 1rem;
+      font-size: 1.2rem;
       display: block;
+      box-sizing: border-box;
     }
     button {
       background: #ffffff;
@@ -38,10 +40,12 @@ body {
       padding: 10px;
       font-size: 1rem;
       color: rgba(173, 146, 88, 1);
+      box-sizing: border-box;
     }
     button:hover {
       color: #ffffff;
       background: rgba(173, 146, 88, 1);
+      box-sizing: border-box;
     }
   }
   #nav {
