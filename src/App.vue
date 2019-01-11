@@ -27,15 +27,15 @@ body {
     height: 49px;
     width: 100%;
     border-bottom: rgba(173, 146, 88, 1) solid 1px;
+    .icon {
+      margin-left: 5px;
+      margin-top: 9px;
+    }
     a {
       font-weight: bold;
       color: #2c3e50;
       &.router-link-exact-active {
         color: #42b983;
-      }
-      .icon {
-        margin-left: 5px;
-        margin-top: 9px;
       }
     }
   }
