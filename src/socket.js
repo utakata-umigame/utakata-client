@@ -7,6 +7,7 @@ const socket = {
       sender: "",
       content: ""
     },
+    lobbyChats: [],
     questions: [],
     chats: []
   },
@@ -43,6 +44,10 @@ const socket = {
       sock.on("trueAns", ans => {
         if (!ans) return;
         state.mondai.trueAns = ans;
+      });
+      sock.on("lobbyChat", data => {
+        if (!data) return;
+        state.lobbyChats = data;
       });
     },
     disconnect(state) {
@@ -100,9 +105,25 @@ const socket = {
         name: "refresh",
         payload: null
       });
+    },
+    fetchLobby(context) {
+      context.commit("emit", {
+        name: "fetchLobby",
+        payload: null
+      });
+    },
+    sendLobbyChat(context, payload) {
+      context.commit("emit", {
+        name: "lobbyMessage",
+        payload: payload
+      });
     }
   },
-  getters: {}
+  getters: {
+    lobbyChats(state) {
+      return state.lobbyChats;
+    }
+  }
 };
 
 export default socket;

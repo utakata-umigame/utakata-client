@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mondai">
         <div v-if="mondai">
             <p class="multiline">{{mondai.content}}</p>
         </div>
@@ -93,4 +93,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.mondai {
+  position: fixed;
+  width: 100vh;
+  top: 50px;
+}
 </style>

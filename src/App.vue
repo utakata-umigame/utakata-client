@@ -15,12 +15,13 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100vh;
   .multiline {
     white-space: pre-wrap;
   }
 }
 #nav {
-  padding: 30px;
+  position: fixed;
   a {
     font-weight: bold;
     color: #2c3e50;
