@@ -38,7 +38,7 @@ export default {
     min-width: 200px;
   }
   .control {
-    border-left: rgba(173, 146, 88, 1) solid 1px;
+    border-left: #dddddd solid 1px;
     background: #fafafa;
     position: fixed;
     width: 300px;
