@@ -46,6 +46,7 @@ body {
   }
   #nav {
     position: fixed;
+    top: 0;
     height: 49px;
     width: 100%;
     border-bottom: rgba(173, 146, 88, 1) solid 1px;
