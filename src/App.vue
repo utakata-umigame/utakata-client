@@ -26,9 +26,15 @@ body {
       border: 1px solid #eeeeee;
       font-size: 1rem;
     }
+    textarea {
+      padding: 10px;
+      border: 1px solid #eeeeee;
+      font-size: 1rem;
+      display: block;
+    }
     button {
       background: #ffffff;
-      border: rgba(173, 146, 88, 1);
+      border: rgba(173, 146, 88, 1) solid 1px;
       padding: 10px;
       font-size: 1rem;
       color: rgba(173, 146, 88, 1);
