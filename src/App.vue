@@ -52,7 +52,8 @@ body {
     position: fixed;
     background: #ffffff;
     top: 0;
-    height: 49px;
+    height: 50px;
+    box-sizing: border-box;
     width: 100%;
     border-bottom: rgba(173, 146, 88, 1) solid 1px;
     .icon {
