@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <img width="32" height="32" src="./assets/icon.svg">
+      <img class="icon" width="32" height="32" src="./assets/icon.svg">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
@@ -32,6 +32,10 @@ body {
       color: #2c3e50;
       &.router-link-exact-active {
         color: #42b983;
+      }
+      .icon {
+        margin-left: 5px;
+        margin-top: 9px;
       }
     }
   }
