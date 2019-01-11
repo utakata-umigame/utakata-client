@@ -29,7 +29,7 @@ body {
     button {
       background: #ffffff;
       border: rgba(173, 146, 88, 1);
-      padding: 5px;
+      padding: 10px;
       font-size: 1rem;
       color: rgba(173, 146, 88, 1);
     }
