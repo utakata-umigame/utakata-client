@@ -67,7 +67,9 @@ export default {
   .box {
     padding: 20px;
     margin-bottom: 10px;
-    border: 1px solid #dddddd;
+    border: 1px solid rgba(173, 146, 88, 1);
+    border-radius: 5px;
+    filter: drop-shadow(1px 1px 1px);
     background: #ffffff;
   }
 }
