@@ -21,6 +21,22 @@ body {
     .multiline {
       white-space: pre-wrap;
     }
+    input {
+      padding: 10px;
+      border: 1px solid #eeeeee;
+      font-size: 1rem;
+    }
+    button {
+      background: #ffffff;
+      border: rgba(173, 146, 88, 1);
+      padding: 5px;
+      font-size: 1rem;
+      color: rgba(173, 146, 88, 1);
+    }
+    button:hover {
+      color: #ffffff;
+      background: rgba(173, 146, 88, 1);
+    }
   }
   #nav {
     position: fixed;
