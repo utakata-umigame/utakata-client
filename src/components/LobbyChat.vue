@@ -7,10 +7,9 @@
               <p>{{item.date}}</p>
           </div>
       </div>
-        <div class="chat-form">
-            <input v-model="content" placeholder="チャットメッセージ">
-            <button @click="send">送信</button>
-        </div>
+        <form class="chat-form" @submit.prevent="send">
+            <input class="chat-input" v-model="content" placeholder="チャットメッセージ">
+        </form>
   </div>
 </template>
 
@@ -63,6 +62,9 @@ export default {
     position: absolute;
     width: 100%;
     bottom: 0;
+  }
+  .chat-input {
+    width: 100%;
   }
   .box {
     padding: 20px;
