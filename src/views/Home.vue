@@ -4,8 +4,10 @@
       <lobby-chat />
     </div>
     <div class="control">
+      <div class="forms">
       <enter-form />
       <user-form />
+      </div>
     </div>
   </div>
 </template>
@@ -34,15 +36,19 @@ export default {
     left: 0;
     right: 300px;
     min-width: 200px;
-    background: #fafafa;
   }
   .control {
+    border-left: rgba(173, 146, 88, 1) solid 1px;
+    background: #fafafa;
     position: fixed;
     width: 300px;
     top: 50px;
     right: 0;
     height: 100vh;
     bottom: 0;
+    .forms {
+      padding: 10px;
+    }
   }
 }
 </style>
