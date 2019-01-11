@@ -65,6 +65,7 @@ export default {
   }
   .chat-input {
     width: 100%;
+    box-sizing: border-box;
   }
   .box {
     padding: 20px;
