@@ -9,26 +9,29 @@
 </template>
 
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  height: 100vh;
-  .multiline {
-    white-space: pre-wrap;
-  }
-}
-#nav {
-  position: fixed;
-  height: 40px;
-  width: 100%;
-  border-bottom: rgba(173, 146, 88, 1) solid 1px;
-  a {
-    font-weight: bold;
+body {
+  margin: 0;
+  #app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+    height: 100vh;
+    .multiline {
+      white-space: pre-wrap;
+    }
+  }
+  #nav {
+    position: fixed;
+    height: 49px;
+    width: 100%;
+    border-bottom: rgba(173, 146, 88, 1) solid 1px;
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+      &.router-link-exact-active {
+        color: #42b983;
+      }
     }
   }
 }
