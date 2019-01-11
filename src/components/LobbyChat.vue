@@ -68,7 +68,7 @@ export default {
     box-sizing: border-box;
   }
   .box {
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid transparent;
     border-radius: 5px;
