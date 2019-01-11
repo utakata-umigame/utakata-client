@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <img width="32" height="32" src="./img/icon.svg">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
