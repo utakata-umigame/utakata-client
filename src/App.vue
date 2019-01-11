@@ -46,6 +46,7 @@ body {
   }
   #nav {
     position: fixed;
+    background: #ffffff;
     top: 0;
     height: 49px;
     width: 100%;
