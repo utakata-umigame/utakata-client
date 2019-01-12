@@ -34,6 +34,9 @@ export default {
 
     this.$store.dispatch("socket/fetchLobby");
   },
+  destroyed() {
+    this.$store.commit("socket/disconnect");
+  },
   methods: {
     send() {
       this.$store.dispatch("socket/sendLobbyChat", {
