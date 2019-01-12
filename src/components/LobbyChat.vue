@@ -2,9 +2,9 @@
   <div class="lobby-chat">
       <div class="messages">
           <div class="box" v-for="item in lobbyChats" :key="item.id">
-              <h3><strong>{{item.name}}</strong>
-              {{item.content}}</h3>
-              <p>{{item.date}}</p>
+              <p><strong>{{item.name}}</strong>
+              {{item.content}}</p>
+              <p><small>{{item.date}}</small></p>
           </div>
       </div>
         <form class="chat-form" @submit.prevent="send">
@@ -53,7 +53,6 @@ export default {
     left: 0;
     right: 300px;
     top: 50px;
-    padding: 10px;
     bottom: 50px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -69,10 +68,7 @@ export default {
   }
   .box {
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    filter: drop-shadow(1px 1px 1px rgba(173,146,88,1));
+    border-bottom: 1px solid #eeeeee;
     background: #ffffff;
   }
 }
