@@ -4,7 +4,10 @@ db.collection('puzzles').onSnapshot((querySnapshot) => {
   umigame.state.puzzles = []
   querySnapshot.forEach((doc) => {
     console.log(doc);
-    umigame.state.puzzles.push(doc.data());
+    umigame.state.puzzles.push({
+      id: doc.id,
+      data: doc.data()
+    });
   })
 })
 const umigame = {

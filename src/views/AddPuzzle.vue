@@ -3,7 +3,11 @@
     <ul>
       <li v-for="(item, index) in puzzles" :key="index">{{ item }}</li>
     </ul>
-    <button @click="submit">追加</button>
+    <form @submit.prevent="submit">
+      <input />
+      <input type="textarea"/>
+      <button type="submit">追加</button>
+    </form>
   </div>
 </template>
 <script>
