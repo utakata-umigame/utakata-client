@@ -1,47 +1,25 @@
 <template>
   <div class="container">
-    <form>
+    <form v-if="!id">
       <v-text-field
-        v-model="name"
+        v-model="title"
         :error-messages="nameErrors"
         :counter="10"
-        label="Name"
+        label="タイトル"
         required
         @input="$v.name.$touch()"
         @blur="$v.name.$touch()"
       ></v-text-field>
       <v-text-field
-        v-model="email"
+        v-model="content"
         :error-messages="emailErrors"
-        label="E-mail"
+        label="問題文"
         required
         @input="$v.email.$touch()"
         @blur="$v.email.$touch()"
       ></v-text-field>
-      <v-select
-        v-model="select"
-        :items="items"
-        :error-messages="selectErrors"
-        label="Item"
-        required
-        @change="$v.select.$touch()"
-        @blur="$v.select.$touch()"
-      ></v-select>
-      <v-checkbox
-        v-model="checkbox"
-        :error-messages="checkboxErrors"
-        label="Do you agree?"
-        required
-        @change="$v.checkbox.$touch()"
-        @blur="$v.checkbox.$touch()"
-      ></v-checkbox>
-
-      <v-btn @click="submit">submit</v-btn>
+      <v-btn @click="submit">追加</v-btn>
       <v-btn @click="clear">clear</v-btn>
-    </form>
-    <form v-if="!id" @submit.prevent="submit">
-      <input v-model="title" /> <textarea v-model="content" />
-      <button type="submit">追加</button>
     </form>
     <div v-else>
       <router-link :to="{ name: 'puzzle', params: { id: id } }">

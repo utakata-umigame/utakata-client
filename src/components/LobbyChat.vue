@@ -1,7 +1,7 @@
 <template>
-  <div class="lobby-chat">
+  <div class="container">
     <form class="chat-form" @submit.prevent="send">
-      <v-text-field label="チャットメッセージ" v-model="content">
+      <v-text-field label="チャットメッセージ" v-model="content" required>
       </v-text-field>
     </form>
     <v-list>
