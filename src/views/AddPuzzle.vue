@@ -10,16 +10,16 @@
         @input="$v.name.$touch()"
         @blur="$v.name.$touch()"
       ></v-text-field>
-      <v-text-field
+      <v-textarea
         v-model="content"
         :error-messages="emailErrors"
         label="問題文"
         required
         @input="$v.email.$touch()"
         @blur="$v.email.$touch()"
-      ></v-text-field>
+      ></v-textarea>
       <v-btn @click="submit">追加</v-btn>
-      <v-btn @click="clear">clear</v-btn>
+      <v-btn @click="clear">クリア</v-btn>
     </form>
     <div v-else>
       <router-link :to="{ name: 'puzzle', params: { id: id } }">

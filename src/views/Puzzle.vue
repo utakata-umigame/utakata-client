@@ -1,17 +1,40 @@
 <template>
-  <div class="puzzle">
+  <div class="container">
     <h1>{{ current.title }}</h1>
     <p>{{ current.content }}</p>
     <p>{{ current.trueAns }}</p>
-    <button @click="sendQuestion">送信</button>
-    <div v-for="(item, index) in questions" :key="index">
-      {{ item.content }}
-    </div>
+    <form @submit.prevent="sendQuestion">
+      <v-text-field
+        v-model="question"
+        :error-messages="nameErrors"
+        label="質問文"
+        required
+        @input="$v.name.$touch()"
+        @blur="$v.name.$touch()"
+      ></v-text-field>
+      <v-btn>質問</v-btn>
+    </form>
+    <v-list two-line>
+      <template v-for="(item, index) in questions">
+        <v-list-tile :key="item.sender" avatar ripple @click="toggle(index)">
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.sender }}</v-list-tile-title>
+            <v-list-tile-sub-title>{{ item.content }}</v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-divider v-if="index + 1 < questions.length" :key="index"></v-divider>
+      </template>
+    </v-list>
   </div>
 </template>
 <script>
 import db from "@/firebase";
 export default {
+  data() {
+    return {
+      question: ""
+    };
+  },
   mounted() {
     this.$store.dispatch("umigame/fetchPuzzle", this.$route.params.id);
     db.collection("puzzles")
@@ -37,8 +60,9 @@ export default {
     sendQuestion() {
       this.$store.dispatch("umigame/sendQuestion", {
         id: this.$route.params.id,
-        content: "a"
+        content: this.question
       });
+      this.question = "";
     }
   }
 };

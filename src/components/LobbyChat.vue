@@ -6,7 +6,7 @@
     </form>
     <v-list>
       <template v-for="(item, index) in lobbyChats">
-        <v-list-tile :key="index">
+        <v-list-tile :key="index" avatar @click="() => {}">
           <v-list-tile-content>
             <v-list-tile-title v-html="item.sender"></v-list-tile-title>
             <v-list-tile-sub-title
