@@ -3,7 +3,7 @@
     <div class="messages">
       <div class="box" v-for="item in lobbyChats" :key="item.id">
         <p>
-          <strong>{{ item.name }}</strong> {{ item.content }}
+          <strong>{{ item.sender }}</strong> {{ item.content }}
         </p>
         <p>
           <small>{{ item.date }}</small>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import db from "@/firebase";
 export default {
   data() {
     return {
@@ -28,27 +29,23 @@ export default {
     };
   },
   computed: {
-    player() {
-      return this.$store.getters["player/getPlayer"];
-    },
     lobbyChats() {
-      return this.$store.getters["socket/lobbyChats"];
+      return this.$store.state.lobby.chats;
     }
   },
   mounted() {
-    this.$store.commit("socket/connect");
-    this.$store.dispatch("socket/joinRoom", { id: "LobbyChat" });
-
-    this.$store.dispatch("socket/fetchLobby");
-  },
-  destroyed() {
-    this.$store.commit("socket/disconnect");
+    db.collection("lobbyChats").onSnapshot(querySnapshot => {
+      let newList = [];
+      querySnapshot.forEach(doc => {
+        newList.push(doc.data());
+      });
+      this.$store.commit("lobby/setLobbyChats", newList);
+    });
   },
   methods: {
     send() {
-      this.$store.dispatch("socket/sendLobbyChat", {
-        name: this.player.name,
-        removePass: this.player.removePass,
+      this.$store.dispatch("lobby/sendLobbyChat", {
+        sender: "Anonymous",
         content: this.content
       });
       this.content = "";
