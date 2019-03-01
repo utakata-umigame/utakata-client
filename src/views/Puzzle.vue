@@ -6,7 +6,6 @@
     <form @submit.prevent="sendQuestion">
       <v-text-field
         v-model="question"
-        :error-messages="nameErrors"
         label="質問文"
         required
         @input="$v.name.$touch()"

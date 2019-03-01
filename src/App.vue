@@ -5,23 +5,9 @@
       <v-spacer></v-spacer>
       <v-btn icon> <v-icon>refresh</v-icon> </v-btn>
     </v-toolbar>
-    <!--<div id="nav">
-      <div class="menu">
-        <img class="icon" width="32" height="32" src="./assets/icon.svg" />
-        <span>うたかたウミガメ</span>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/add">Add</router-link> |
-        <router-link to="/about">About</router-link>
-      </div>
-    </div>-->
     <v-card flat>
-      <div class="headline text-xs-center pa-5"><router-view /></div>
-      <v-bottom-nav
-        :active.sync="bottomNav"
-        :value="true"
-        fixed
-        color="primary"
-      >
+      <div class="headline pa-5"><router-view /></div>
+      <v-bottom-nav :value="true" fixed color="primary">
         <v-btn color="teal" flat value="recent" @click="$router.push('/')">
           <span>ホーム</span>
           <v-icon>home</v-icon>

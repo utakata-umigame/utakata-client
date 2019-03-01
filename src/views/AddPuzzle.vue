@@ -3,7 +3,6 @@
     <form v-if="!id">
       <v-text-field
         v-model="title"
-        :error-messages="nameErrors"
         :counter="10"
         label="タイトル"
         required
@@ -12,7 +11,6 @@
       ></v-text-field>
       <v-textarea
         v-model="content"
-        :error-messages="emailErrors"
         label="問題文"
         required
         @input="$v.email.$touch()"
