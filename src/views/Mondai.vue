@@ -1,24 +1,32 @@
 <template>
-    <div class="mondai">
-        <div v-if="mondai">
-            <p class="multiline">{{mondai.content}}</p>
-        </div>
-        <mondai-form @submit="sendMondai"/>
-        <div v-for="item in questions" :key="item.id">
-            <div>Q{{item.questionNum}} by {{item.sender || "Anonymous"}} :{{item.text}}</div>
-            <div v-if="item.answer !== 'waiting'">A{{item.questionNum}} by {{item.answerer || "Anonymous"}}:{{item.answer}}</div>
-            <answer-form v-else :id="item.id" @submit="sendAns"/>
-            <div>
-              <span v-if="item.isGood">(良い質問)</span>
-              <span v-if="item.isTrueAns">(正解)</span>
-            </div>
-        </div>
-        <question-form @submit="sendQuestion"/>
-        <div>
-          <p class="multiline">{{mondai.trueAns}}</p>
-        </div>
-        <true-ans-form @submit="sendTrueAns" />
+  <div class="mondai">
+    <div v-if="mondai">
+      <p class="multiline">{{ mondai.content }}</p>
     </div>
+    <mondai-form @submit="sendMondai" />
+    <div v-for="item in questions" :key="item.id">
+      <div>
+        Q{{ item.questionNum }} by {{ item.sender || "Anonymous" }} :{{
+          item.text
+        }}
+      </div>
+      <div v-if="item.answer !== 'waiting'">
+        A{{ item.questionNum }} by {{ item.answerer || "Anonymous" }}:{{
+          item.answer
+        }}
+      </div>
+      <answer-form v-else :id="item.id" @submit="sendAns" />
+      <div>
+        <span v-if="item.isGood">(良い質問)</span>
+        <span v-if="item.isTrueAns">(正解)</span>
+      </div>
+    </div>
+    <question-form @submit="sendQuestion" />
+    <div>
+      <p class="multiline">{{ mondai.trueAns }}</p>
+    </div>
+    <true-ans-form @submit="sendTrueAns" />
+  </div>
 </template>
 <script>
 import MondaiForm from "@/components/MondaiForm";

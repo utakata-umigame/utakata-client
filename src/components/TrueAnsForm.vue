@@ -1,8 +1,8 @@
 <template>
-    <form @submit.prevent="submit">
-        <textarea v-model="content" placeholder="解説" />
-        <input type="submit" value="解説を出す">
-    </form>
+  <form @submit.prevent="submit">
+    <textarea v-model="content" placeholder="解説" />
+    <input type="submit" value="解説を出す" />
+  </form>
 </template>
 <script>
 export default {
@@ -19,5 +19,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

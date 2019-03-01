@@ -1,48 +1,64 @@
-import db from '../firebase';
+import db from "../firebase";
 
-db.collection('puzzles').onSnapshot((querySnapshot) => {
-  umigame.state.puzzles = []
-  querySnapshot.forEach((doc) => {
-    console.log(doc);
-    umigame.state.puzzles.push({
-      id: doc.id,
-      data: doc.data()
-    });
-  })
-})
 const umigame = {
   namespaced: true,
   state: {
-    puzzles: []
+    currentID: "",
+    currentPuzzle: {
+      title: "",
+      content: "",
+      trueAns: ""
+    },
+    questions: []
   },
   mutations: {
-
-  },
-  actions: {
-    submitPuzzle() {
-      db.collection('puzzles').add({
-        title: 'タイトル',
-        content: '問題文',
-        trueAns: '答え'
-      })
-      .then((docRef) => {
-        console.log(docRef.id);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    setID(state, id) {
+      state.currentID = id;
     },
-    getPuzzle() {
-      db.collection('puzzles').get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          console.log(doc)
-        });
-      })
+    setPuzzle(state, payload) {
+      state.currentPuzzle = payload;
+    },
+    setQuestions(state, payload) {
+      state.questions = payload;
     }
   },
-  getters: {
-
-  }
+  actions: {
+    async submitPuzzle(context, payload) {
+      db.collection("puzzles")
+        .add({
+          title: payload.title,
+          content: payload.content,
+          trueAns: ""
+        })
+        .then(docRef => {
+          context.commit("setID", docRef.id);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    },
+    fetchPuzzle(context, id) {
+      context.commit("setID", id);
+      db.collection("puzzles")
+        .doc(id)
+        .get()
+        .then(doc => {
+          context.commit("setPuzzle", doc.data());
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    },
+    sendQuestion(context, payload) {
+      db.collection("puzzles")
+        .doc(payload.id)
+        .collection("questions")
+        .add({
+          content: payload.content
+        });
+    }
+  },
+  getters: {}
 };
 
 export default umigame;

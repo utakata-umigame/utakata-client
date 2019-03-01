@@ -1,10 +1,10 @@
 <template>
-    <form @submit.prevent="submit">
-        <input v-model="content" placeholder="質問への回答">
-        <input type="checkbox" v-model="isGood">良い質問
-        <input type="checkbox" v-model="isTrueAns">正解
-        <input type="submit" value="回答">
-    </form>
+  <form @submit.prevent="submit">
+    <input v-model="content" placeholder="質問への回答" />
+    <input type="checkbox" v-model="isGood" />良い質問
+    <input type="checkbox" v-model="isTrueAns" />正解
+    <input type="submit" value="回答" />
+  </form>
 </template>
 <script>
 export default {
@@ -31,5 +31,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

@@ -1,15 +1,22 @@
 <template>
   <div class="lobby-chat">
-      <div class="messages">
-          <div class="box" v-for="item in lobbyChats" :key="item.id">
-              <p><strong>{{item.name}}</strong>
-              {{item.content}}</p>
-              <p><small>{{item.date}}</small></p>
-          </div>
+    <div class="messages">
+      <div class="box" v-for="item in lobbyChats" :key="item.id">
+        <p>
+          <strong>{{ item.name }}</strong> {{ item.content }}
+        </p>
+        <p>
+          <small>{{ item.date }}</small>
+        </p>
       </div>
-        <form class="chat-form" @submit.prevent="send">
-            <input class="chat-input" v-model="content" placeholder="チャットメッセージ">
-        </form>
+    </div>
+    <form class="chat-form" @submit.prevent="send">
+      <input
+        class="chat-input"
+        v-model="content"
+        placeholder="チャットメッセージ"
+      />
+    </form>
   </div>
 </template>
 

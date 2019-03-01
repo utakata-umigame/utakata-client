@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Mondai from "./views/Mondai.vue";
 import AddPuzzle from "./views/AddPuzzle.vue";
+import Puzzle from "./views/Puzzle.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -28,6 +29,11 @@ export default new Router({
       path: "/add",
       name: "add",
       component: AddPuzzle
+    },
+    {
+      path: "/puzzle/show/:id",
+      name: "puzzle",
+      component: Puzzle
     }
   ]
 });

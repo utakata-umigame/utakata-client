@@ -1,8 +1,8 @@
 <template>
-    <form @submit.prevent="submit">
-        <input v-model="content" placeholder="質問文">
-        <input type="submit" value="質問">
-    </form>
+  <form @submit.prevent="submit">
+    <input v-model="content" placeholder="質問文" />
+    <input type="submit" value="質問" />
+  </form>
 </template>
 <script>
 export default {
@@ -19,5 +19,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

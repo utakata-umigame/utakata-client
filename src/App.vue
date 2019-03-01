@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <img class="icon" width="32" height="32" src="./assets/icon.svg">
+      <img class="icon" width="32" height="32" src="./assets/icon.svg" />
       <router-link to="/">Home</router-link> |
+      <router-link to="/add">Add</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view />

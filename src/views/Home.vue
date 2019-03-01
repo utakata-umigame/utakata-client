@@ -1,12 +1,10 @@
 <template>
   <div class="home">
-    <div class="chat">
-      <lobby-chat />
-    </div>
+    <div class="chat"><lobby-chat /></div>
     <div class="control">
       <div class="forms">
-      <enter-form />
-      <user-form />
+        <enter-form />
+        <user-form />
       </div>
     </div>
   </div>
