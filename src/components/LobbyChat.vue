@@ -1,6 +1,22 @@
 <template>
   <div class="lobby-chat">
-    <div class="messages">
+    <form class="chat-form" @submit.prevent="send">
+      <v-text-field label="チャットメッセージ" v-model="content">
+      </v-text-field>
+    </form>
+    <v-list>
+      <template v-for="(item, index) in lobbyChats">
+        <v-list-tile :key="index">
+          <v-list-tile-content>
+            <v-list-tile-title v-html="item.sender"></v-list-tile-title>
+            <v-list-tile-sub-title
+              v-html="item.content"
+            ></v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </template>
+    </v-list>
+    <!--<div class="messages">
       <div class="box" v-for="item in lobbyChats" :key="item.id">
         <p>
           <strong>{{ item.sender }}</strong> {{ item.content }}
@@ -9,14 +25,7 @@
           <small>{{ item.date }}</small>
         </p>
       </div>
-    </div>
-    <form class="chat-form" @submit.prevent="send">
-      <input
-        class="chat-input"
-        v-model="content"
-        placeholder="チャットメッセージ"
-      />
-    </form>
+    </div>-->
   </div>
 </template>
 
@@ -53,30 +62,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-.lobby-chat {
-  .messages {
-    position: fixed;
-    left: 0;
-    right: 300px;
-    top: 50px;
-    bottom: 50px;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  .chat-form {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-  }
-  .chat-input {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .box {
-    padding: 10px;
-    border-bottom: 1px solid #eeeeee;
-    background: #ffffff;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

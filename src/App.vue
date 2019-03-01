@@ -1,11 +1,49 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <img class="icon" width="32" height="32" src="./assets/icon.svg" />
-      <span> うたかたウミガメ </span> <router-link to="/">Home</router-link> |
-      <router-link to="/add">Add</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <v-toolbar color="primary">
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+
+      <v-toolbar-title>うたかたウミガメ</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon> <v-icon>search</v-icon> </v-btn>
+
+      <v-btn icon> <v-icon>apps</v-icon> </v-btn>
+
+      <v-btn icon> <v-icon>refresh</v-icon> </v-btn>
+
+      <v-btn icon> <v-icon>more_vert</v-icon> </v-btn>
+    </v-toolbar>
+    <!--<div id="nav">
+      <div class="menu">
+        <img class="icon" width="32" height="32" src="./assets/icon.svg" />
+        <span>うたかたウミガメ</span>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/add">Add</router-link> |
+        <router-link to="/about">About</router-link>
+      </div>
+    </div>-->
+    <v-bottom-nav
+      :active.sync="bottomNav"
+      :value="true"
+      absolute
+      color="transparent"
+    >
+      <v-btn color="teal" flat value="recent" @click="$router.push('/')">
+        <span>ホーム</span>
+        <v-icon>home</v-icon>
+      </v-btn>
+
+      <v-btn color="teal" flat value="favorites" @click="$router.push('/add')">
+        <span>出題</span>
+        <v-icon>favorite</v-icon>
+      </v-btn>
+      <v-btn color="teal" flat value="nearby">
+        <span>Nearby</span>
+        <v-icon>place</v-icon>
+      </v-btn>
+    </v-bottom-nav>
     <router-view />
   </div>
 </template>
@@ -18,55 +56,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    height: 100vh;
     .multiline {
       white-space: pre-wrap;
-    }
-    input {
-      padding: 10px;
-      border: 1px solid #eeeeee;
-      font-size: 1rem;
-      box-sizing: border-box;
-    }
-    textarea {
-      padding: 10px;
-      border: 1px solid #eeeeee;
-      font-size: 1.2rem;
-      display: block;
-      box-sizing: border-box;
-    }
-    button {
-      background: #ffffff;
-      border: rgba(173, 146, 88, 1) solid 1px;
-      padding: 10px;
-      font-size: 1rem;
-      color: rgba(173, 146, 88, 1);
-      box-sizing: border-box;
-    }
-    button:hover {
-      color: #ffffff;
-      background: rgba(173, 146, 88, 1);
-      box-sizing: border-box;
-    }
-  }
-  #nav {
-    position: fixed;
-    background: #ffffff;
-    top: 0;
-    height: 50px;
-    box-sizing: border-box;
-    width: 100%;
-    border-bottom: rgba(173, 146, 88, 1) solid 1px;
-    .icon {
-      margin-left: 5px;
-      margin-top: 9px;
-    }
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-      &.router-link-exact-active {
-        color: #42b983;
-      }
     }
   }
 }

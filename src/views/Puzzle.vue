@@ -43,8 +43,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-.puzzle {
-  padding-top: 60px;
-}
-</style>
+<style lang="scss" scoped></style>
