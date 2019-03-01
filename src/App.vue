@@ -14,27 +14,34 @@
         <router-link to="/about">About</router-link>
       </div>
     </div>-->
-    <v-bottom-nav
-      :active.sync="bottomNav"
-      :value="true"
-      absolute
-      color="transparent"
-    >
-      <v-btn color="teal" flat value="recent" @click="$router.push('/')">
-        <span>ホーム</span>
-        <v-icon>home</v-icon>
-      </v-btn>
+    <v-card flat>
+      <div class="headline text-xs-center pa-5"><router-view /></div>
+      <v-bottom-nav
+        :active.sync="bottomNav"
+        :value="true"
+        fixed
+        color="primary"
+      >
+        <v-btn color="teal" flat value="recent" @click="$router.push('/')">
+          <span>ホーム</span>
+          <v-icon>home</v-icon>
+        </v-btn>
 
-      <v-btn color="teal" flat value="favorites" @click="$router.push('/add')">
-        <span>出題</span>
-        <v-icon>favorite</v-icon>
-      </v-btn>
-      <v-btn color="teal" flat value="nearby">
-        <span>使い方</span>
-        <v-icon>place</v-icon>
-      </v-btn>
-    </v-bottom-nav>
-    <router-view />
+        <v-btn
+          color="teal"
+          flat
+          value="favorites"
+          @click="$router.push('/add')"
+        >
+          <span>出題</span>
+          <v-icon>favorite</v-icon>
+        </v-btn>
+        <v-btn color="teal" flat value="nearby">
+          <span>使い方</span>
+          <v-icon>place</v-icon>
+        </v-btn>
+      </v-bottom-nav>
+    </v-card>
   </div>
 </template>
 
