@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <h1>{{ current.title }}</h1>
     <p>{{ current.content }}</p>
     <p>{{ current.trueAns }}</p>
@@ -8,14 +8,14 @@
         v-model="question"
         label="質問文"
         required
-        @input="$v.name.$touch()"
-        @blur="$v.name.$touch()"
+        @input="$v.question.$touch()"
+        @blur="$v.question.$touch()"
       ></v-text-field>
       <v-btn>質問</v-btn>
     </form>
     <v-list two-line>
       <template v-for="(item, index) in questions">
-        <v-list-tile :key="item.sender" avatar ripple @click="toggle(index)">
+        <v-list-tile :key="item.sender" avatar ripple @click="() => {}">
           <v-list-tile-content>
             <v-list-tile-title>{{ item.sender }}</v-list-tile-title>
             <v-list-tile-sub-title>{{ item.content }}</v-list-tile-sub-title>

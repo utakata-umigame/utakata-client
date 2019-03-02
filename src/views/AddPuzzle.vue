@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <form v-if="!id">
       <v-text-field
         v-model="title"
@@ -49,7 +49,8 @@ export default {
         title: this.title,
         content: this.content
       });
-    }
+    },
+    clear() {}
   }
 };
 </script>

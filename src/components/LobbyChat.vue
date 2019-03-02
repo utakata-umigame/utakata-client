@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <form class="chat-form" @submit.prevent="send">
       <v-text-field label="チャットメッセージ" v-model="content" required>
       </v-text-field>
