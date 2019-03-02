@@ -6,15 +6,15 @@
         :counter="10"
         label="タイトル"
         required
-        @input="$v.name.$touch()"
-        @blur="$v.name.$touch()"
+        @input="$v.title.$touch()"
+        @blur="$v.title.$touch()"
       ></v-text-field>
       <v-textarea
         v-model="content"
         label="問題文"
         required
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
+        @input="$v.content.$touch()"
+        @blur="$v.content.$touch()"
       ></v-textarea>
       <v-btn @click="submit">追加</v-btn>
       <v-btn @click="clear">クリア</v-btn>
