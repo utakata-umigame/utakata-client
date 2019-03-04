@@ -34,6 +34,21 @@ export default {
       question: ""
     };
   },
+  watch: {
+    $route() {
+      this.$store.dispatch("umigame/fetchPuzzle", this.$route.params.id);
+      db.collection("puzzles")
+        .doc(this.$route.params.id)
+        .collection("questions")
+        .onSnapshot(querySnapshot => {
+          let newList = [];
+          querySnapshot.forEach(doc => {
+            newList.push(doc.data());
+          });
+          this.$store.commit("umigame/setQuestions", newList);
+        });
+    }
+  },
   mounted() {
     this.$store.dispatch("umigame/fetchPuzzle", this.$route.params.id);
     db.collection("puzzles")

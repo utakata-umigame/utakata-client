@@ -2,7 +2,11 @@
   <v-app id="app">
     <v-toolbar color="light">
       <v-toolbar-title>うたかたウミガメ</v-toolbar-title>
-      <v-spacer></v-spacer>
+      <v-spacer />
+      <form @submit.prevent="$router.push(`/puzzle/show/${id}`)">
+        <v-text-field prepend-icon="search" single-line v-model="id">
+        </v-text-field>
+      </form>
       <v-btn icon> <v-icon>refresh</v-icon> </v-btn>
     </v-toolbar>
     <v-card flat>
@@ -30,6 +34,15 @@
     </v-card>
   </v-app>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      id: ""
+    };
+  }
+};
+</script>
 
 <style lang="scss">
 body {
