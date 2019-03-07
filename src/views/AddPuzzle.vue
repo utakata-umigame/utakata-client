@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <h1 class="display-1">出題する</h1>
     <form v-if="!id">
       <v-text-field
         v-model="title"

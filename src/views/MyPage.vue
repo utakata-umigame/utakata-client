@@ -30,6 +30,12 @@
         ユーザー名変更
       </v-btn>
     </form>
+    <v-btn v-if="user" color="primary" @click="$store.dispatch('user/logout')">
+      ログアウト
+    </v-btn>
+    <v-btn v-else color="primary" @click="$router.push('/signin')">
+      ログイン
+    </v-btn>
   </v-container>
 </template>
 <script>

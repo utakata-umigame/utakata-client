@@ -26,6 +26,17 @@ const user = {
           console.error(error);
         });
     },
+    signin(context, payload) {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(payload.email, payload.password)
+        .catch(error => {
+          console.error(error);
+        });
+    },
+    logout() {
+      firebase.auth().signOut();
+    },
     updateProfile(context, payload) {
       firebase.auth().currentUser.updateProfile({
         displayName: payload.name

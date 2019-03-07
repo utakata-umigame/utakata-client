@@ -1,8 +1,12 @@
 <template>
   <v-container fluid py-5>
     <v-layout column justify-center align-center>
-      <h1>{{ current.title }}</h1>
-      <p>{{ current.content }}</p>
+      <h1 class="display-1">{{ current.title }}</h1>
+      <v-flex xs12>
+        <v-card class="pa-5" color="grey lighten-3">
+          <p class="headline">{{ current.content }}</p>
+        </v-card>
+      </v-flex>
       <p>{{ current.trueAns }}</p>
     </v-layout>
     <form @submit.prevent="sendQuestion">

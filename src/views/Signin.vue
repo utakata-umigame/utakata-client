@@ -1,6 +1,14 @@
 <template>
   <v-container fluid>
-    <form>
+    <div id="firebaseui-auth-container" />
+    <form
+      @submit.prevent="
+        $store.dispatch('user/signin', {
+          email: email,
+          password: password
+        })
+      "
+    >
       <v-text-field v-model="email" label="メールアドレス" required />
       <v-text-field
         v-model="password"
@@ -8,17 +16,7 @@
         label="パスワード"
         required
       />
-      <v-btn
-        color="primary"
-        @click="
-          $store.dispatch('user/signin', {
-            email: email,
-            password: password
-          })
-        "
-      >
-        ログイン
-      </v-btn>
+      <v-btn color="primary" type="submit"> ログイン </v-btn>
     </form>
   </v-container>
 </template>

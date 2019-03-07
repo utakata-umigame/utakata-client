@@ -50,6 +50,7 @@
   </v-app>
 </template>
 <script>
+import firebase from "firebase";
 export default {
   data() {
     return {
@@ -58,12 +59,21 @@ export default {
     };
   },
   mounted() {
-    this.$store.dispatch("user/getCurrent");
-  },
-  watch: {
-    $route() {
-      this.$store.dispatch("user/getCurrent");
-    }
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.$store.commit("user/setUser", {
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName
+        });
+      } else {
+        this.$store.commit("user/setUser", {
+          uid: "",
+          email: "",
+          displayName: ""
+        });
+      }
+    });
   }
 };
 </script>
