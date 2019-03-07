@@ -1,5 +1,5 @@
 <template>
-  <v-container py-5>
+  <v-container fluid py-5>
     <v-layout column justify-center align-center>
       <h1>{{ current.title }}</h1>
       <p>{{ current.content }}</p>

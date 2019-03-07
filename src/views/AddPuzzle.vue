@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <form v-if="!id">
       <v-text-field
         v-model="title"

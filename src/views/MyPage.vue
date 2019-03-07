@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <p>{{ user || "ゲスト" }}</p>
     <form>
       <v-text-field v-model="email" label="メールアドレス" required />
