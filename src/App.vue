@@ -16,27 +16,17 @@
         </form>
       </v-toolbar>
       <div class="headline pa-2"><router-view /></div>
-      <v-bottom-nav :value="true" fixed color="light">
-        <v-btn color="teal" flat value="recent" @click="$router.push('/')">
+      <v-bottom-nav :value="true" fixed color="primary" dark>
+        <v-btn color="teal" value="recent" @click="$router.push('/')">
           <span>ホーム</span>
           <v-icon>home</v-icon>
         </v-btn>
 
-        <v-btn
-          color="teal"
-          flat
-          value="favorites"
-          @click="$router.push('/add')"
-        >
+        <v-btn color="teal" value="favorites" @click="$router.push('/add')">
           <span>出題</span>
           <v-icon>question_answer</v-icon>
         </v-btn>
-        <v-btn
-          color="teal"
-          flat
-          value="nearby"
-          @click="$router.push('/mypage')"
-        >
+        <v-btn color="teal" value="nearby" @click="$router.push('/mypage')">
           <span>マイページ</span>
           <v-icon>face</v-icon>
         </v-btn>

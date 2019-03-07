@@ -10,7 +10,11 @@ import "vuetify/dist/vuetify.min.css";
 
 Vue.config.productionTip = false;
 
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+  theme: {
+    primary: "#ad9258"
+  }
+});
 
 new Vue({
   router,
