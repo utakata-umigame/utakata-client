@@ -1,4 +1,4 @@
-import db from "../firebase";
+import db from "../firestore";
 
 const lobby = {
   namespaced: true,
@@ -14,6 +14,7 @@ const lobby = {
     sendLobbyChat(context, payload) {
       db.collection("lobbyChats")
         .add({
+          senderID: payload.senderID,
           sender: payload.sender,
           content: payload.content,
           date: new Date().toString()
@@ -21,6 +22,15 @@ const lobby = {
         .then(docRef => {
           console.log(docRef.id);
         })
+        .catch(error => {
+          console.error(error);
+        });
+    },
+    removeLobbyChat(context, payload) {
+      db.collection("lobbyChats")
+        .doc(payload)
+        .delete()
+        .then(() => {})
         .catch(error => {
           console.error(error);
         });

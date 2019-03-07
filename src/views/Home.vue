@@ -1,9 +1,6 @@
 <template>
-  <div>
-    <div class="chat"><lobby-chat /></div>
-  </div>
+  <lobby-chat />
 </template>
-
 <script>
 import LobbyChat from "@/components/LobbyChat.vue";
 export default {

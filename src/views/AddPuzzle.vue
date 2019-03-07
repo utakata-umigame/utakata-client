@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     <form v-if="!id">
       <v-text-field
         v-model="title"
@@ -16,15 +16,15 @@
         @input="$v.content.$touch()"
         @blur="$v.content.$touch()"
       ></v-textarea>
-      <v-btn @click="submit">追加</v-btn>
-      <v-btn @click="clear">クリア</v-btn>
+      <v-btn color="success" @click="submit">追加</v-btn>
+      <v-btn color="pink" dark @click="clear">クリア</v-btn>
     </form>
     <div v-else>
       <router-link :to="{ name: 'puzzle', params: { id: id } }">
         {{ id }}
       </router-link>
     </div>
-  </div>
+  </v-container>
 </template>
 <script>
 export default {
@@ -50,7 +50,10 @@ export default {
         content: this.content
       });
     },
-    clear() {}
+    clear() {
+      this.title = "";
+      this.content = "";
+    }
   }
 };
 </script>

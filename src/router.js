@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import Mondai from "./views/Mondai.vue";
 import AddPuzzle from "./views/AddPuzzle.vue";
 import Puzzle from "./views/Puzzle.vue";
+import MyPage from "./views/MyPage.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -34,6 +35,11 @@ export default new Router({
       path: "/puzzle/show/:id",
       name: "puzzle",
       component: Puzzle
+    },
+    {
+      path: "/mypage",
+      name: "mypage",
+      component: MyPage
     }
   ]
 });

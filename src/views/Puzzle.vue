@@ -1,16 +1,12 @@
 <template>
-  <div>
-    <h1>{{ current.title }}</h1>
-    <p>{{ current.content }}</p>
-    <p>{{ current.trueAns }}</p>
+  <v-container py-5>
+    <v-layout column justify-center align-center>
+      <h1>{{ current.title }}</h1>
+      <p>{{ current.content }}</p>
+      <p>{{ current.trueAns }}</p>
+    </v-layout>
     <form @submit.prevent="sendQuestion">
-      <v-text-field
-        v-model="question"
-        label="質問文"
-        required
-        @input="$v.question.$touch()"
-        @blur="$v.question.$touch()"
-      ></v-text-field>
+      <v-text-field v-model="question" label="質問文" required></v-text-field>
       <v-btn>質問</v-btn>
     </form>
     <v-list two-line>
@@ -24,10 +20,10 @@
         <v-divider v-if="index + 1 < questions.length" :key="index"></v-divider>
       </template>
     </v-list>
-  </div>
+  </v-container>
 </template>
 <script>
-import db from "@/firebase";
+import db from "@/firestore";
 export default {
   data() {
     return {
