@@ -1,7 +1,8 @@
 <template>
   <v-app id="app">
-    <v-card flat>
+    <v-card flat height="100%">
       <v-toolbar color="white">
+        <v-toolbar-side-icon @click="drawer = !drawer" />
         <v-avatar size="32"> <img src="./assets/icon.svg" /> </v-avatar>
         <v-toolbar-title class="brand">うたかたウミガメ</v-toolbar-title>
         <v-spacer />
@@ -15,6 +16,20 @@
           </v-text-field>
         </form>
       </v-toolbar>
+      <v-navigation-drawer v-model="drawer" absolute>
+        <v-toolbar flat class="transparent">
+          <v-list class="pa-0">
+            <v-list-tile>
+              <v-list-tile-action>
+                <v-btn icon @click="drawer = !drawer">
+                  <v-icon>chevron_left</v-icon>
+                </v-btn>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-list>
+        </v-toolbar>
+        <v-list class="pt-0" dense><v-divider /></v-list>
+      </v-navigation-drawer>
       <div class="headline pa-2"><router-view /></div>
       <v-bottom-nav :value="true" fixed color="primary" dark>
         <v-btn color="teal" value="recent" @click="$router.push('/')">
@@ -38,7 +53,8 @@
 export default {
   data() {
     return {
-      id: ""
+      id: "",
+      drawer: true
     };
   },
   mounted() {
