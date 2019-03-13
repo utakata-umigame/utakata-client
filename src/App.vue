@@ -5,16 +5,6 @@
         <v-toolbar-side-icon @click="drawer = !drawer" />
         <v-avatar size="32"> <img src="./assets/icon.svg" /> </v-avatar>
         <v-toolbar-title class="brand">うたかたウミガメ</v-toolbar-title>
-        <v-spacer />
-        <form @submit.prevent="$router.push(`/puzzle/show/${id}`)">
-          <v-text-field
-            prepend-icon="question_answer"
-            label="IDを入力して参加"
-            single-line
-            v-model="id"
-          >
-          </v-text-field>
-        </form>
       </v-toolbar>
       <v-navigation-drawer v-model="drawer" absolute>
         <v-toolbar flat class="transparent">
@@ -28,7 +18,20 @@
             </v-list-tile>
           </v-list>
         </v-toolbar>
-        <v-list class="pt-0" dense><v-divider /></v-list>
+        <v-list class="pt-0" dense>
+          <v-divider />
+          <v-list-tile>
+            <form @submit.prevent="$router.push(`/puzzle/show/${id}`)">
+              <v-text-field
+                prepend-icon="question_answer"
+                label="IDを入力して参加"
+                single-line
+                v-model="id"
+              >
+              </v-text-field>
+            </form>
+          </v-list-tile>
+        </v-list>
       </v-navigation-drawer>
       <div class="headline pa-2"><router-view /></div>
       <v-bottom-nav :value="true" fixed color="primary" dark>
@@ -55,7 +58,7 @@ export default {
   data() {
     return {
       id: "",
-      drawer: true
+      drawer: false
     };
   },
   mounted() {
