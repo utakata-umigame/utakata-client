@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <v-card flat height="100%">
-      <v-toolbar color="white">
+      <v-toolbar fixed color="white">
         <v-toolbar-side-icon @click="drawer = !drawer" />
         <v-avatar size="32"> <img src="./assets/icon.svg" /> </v-avatar>
         <v-toolbar-title class="brand">うたかたウミガメ</v-toolbar-title>
