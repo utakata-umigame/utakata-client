@@ -17,7 +17,7 @@
         @input="$v.content.$touch()"
         @blur="$v.content.$touch()"
       ></v-textarea>
-      <v-btn color="primary" @click="submit">追加</v-btn>
+      <v-btn color="primary" @click="submit">出題</v-btn>
       <v-btn color="pink" dark @click="clear">クリア</v-btn>
     </form>
     <div v-else>
