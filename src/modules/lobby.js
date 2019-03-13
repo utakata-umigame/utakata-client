@@ -1,3 +1,4 @@
+import firebase from "firebase";
 import db from "../firestore";
 
 const lobby = {
@@ -17,7 +18,7 @@ const lobby = {
           senderID: payload.senderID,
           sender: payload.sender,
           content: payload.content,
-          date: new Date().toString()
+          date: firebase.firestore.FieldValue.serverTimestamp()
         })
         .then(docRef => {
           console.log(docRef.id);
