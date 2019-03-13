@@ -46,7 +46,7 @@ export default {
     }
   },
   mounted() {
-    db.collection("lobbyChats").onSnapshot(querySnapshot => {
+    db.collection("lobbyChats").orderBy("date").onSnapshot(querySnapshot => {
       let newList = [];
       querySnapshot.forEach(doc => {
         newList.push({
