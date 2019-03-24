@@ -26,11 +26,11 @@ export default {
   },
   methods: {
     signin() {
-      this.$store.dispatch('user/signin', {
+      this.$store.dispatch("user/signin", {
         email: this.email,
         password: this.password
       });
-      this.router.push("/mypage");
+      this.$router.push("/mypage");
     }
   }
 };
