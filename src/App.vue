@@ -33,7 +33,7 @@
           </v-list-tile>
         </v-list>
       </v-navigation-drawer>
-      <div class="headline pa-2"><router-view /></div>
+      <div class="headline py-5"><router-view /></div>
       <v-bottom-nav :value="true" fixed color="primary" dark>
         <v-btn color="teal" value="recent" @click="$router.push('/')">
           <span>ホーム</span>
